@@ -1,6 +1,7 @@
 // in src/users.js
 import React from 'react';
-import {List, Datagrid, TextField, EmailField, UrlField} from 'react-admin';
+import {List, Datagrid, TextField, EmailField} from 'react-admin';
+import CustomUrlField from '../react-admin-wrappers/CustomUrlField';
 
 export const UserList = props => (
     <List {...props}>
@@ -9,10 +10,8 @@ export const UserList = props => (
             <TextField source="name"/>
             <TextField source="username"/>
             <EmailField source="email"/>
-            <TextField source="address.street"/>
             <TextField source="phone"/>
-            <UrlField source="website" />
-            <TextField source="company.name"/>
+            <CustomUrlField source="website" />
         </Datagrid>
     </List>
 );
